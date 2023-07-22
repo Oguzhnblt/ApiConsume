@@ -4,7 +4,7 @@ using HotelProject.EntityLayer.Concrete;
 
 namespace HotelProject.BusinessLayer.Concrete
 {
-    internal class StaffManager : IGenericService<Staff>
+    public class StaffManager : IStaffService
     {
         private readonly IStaff _staff;
 
@@ -35,7 +35,7 @@ namespace HotelProject.BusinessLayer.Concrete
 
         public void TUpdate(Staff entity)
         {
-            _staff?.Update(entity);
+            _staff.Update(entity);
         }
     }
 }

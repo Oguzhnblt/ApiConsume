@@ -4,7 +4,7 @@ using HotelProject.EntityLayer.Concrete;
 
 namespace HotelProject.BusinessLayer.Concrete
 {
-    public class SubscribeManager : IGenericService<Subscribe>
+    public class SubscribeManager : ISubscribeService
     {
         private readonly ISubscribe _subscribe;
 
