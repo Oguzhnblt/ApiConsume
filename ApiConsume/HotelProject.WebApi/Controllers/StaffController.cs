@@ -1,6 +1,5 @@
 ﻿using HotelProject.BusinessLayer.Abstract;
 using HotelProject.EntityLayer.Concrete;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelProject.WebApi.Controllers
@@ -17,20 +16,20 @@ namespace HotelProject.WebApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult StaffList() // Tüm odaları listeleme
+        public IActionResult StaffList() // Tüm personelları listeleme
         {
             var values = _staffService.TGetList();
             return Ok(values);
         }
 
         [HttpPost]
-        public IActionResult AddStaff(Staff staff) // Oda ekleme
+        public IActionResult AddStaff(Staff staff) // personel ekleme
         {
             _staffService.TInsert(staff);
             return Ok();
         }
-        [HttpDelete]
-        public IActionResult DeleteStaff(int id) // Oda silme
+        [HttpDelete("{id}")]
+        public IActionResult DeleteStaff(int id) // personel silme
         {
             var values = _staffService.TGetByID(id);
             _staffService.TDelete(values);
@@ -38,14 +37,14 @@ namespace HotelProject.WebApi.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateStaff(Staff staff) // Oda güncelleme
+        public IActionResult UpdateStaff(Staff staff) // personel güncelleme
         {
             _staffService.TUpdate(staff);
             return Ok();
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetStaff(int id) // ID'ye göre oda listeleme 
+        public IActionResult GetStaff(int id) // ID'ye göre personel listeleme 
         {
             var values = _staffService.TGetByID(id);
             return Ok(values);
