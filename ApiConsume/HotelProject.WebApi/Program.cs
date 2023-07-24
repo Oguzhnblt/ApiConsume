@@ -29,6 +29,8 @@ builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
 builder.Services.AddScoped<ITestimonial, EFTestimonialDal>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 
+builder.Services.AddAutoMapper(typeof(Program));
+
 builder.Services.AddCors(opt => // Consume edilecek alanlarý tutmak için
 {
     opt.AddPolicy("OtelApiCors", opts =>
