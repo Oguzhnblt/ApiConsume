@@ -29,6 +29,13 @@ builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
 builder.Services.AddScoped<ITestimonial, EFTestimonialDal>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 
+builder.Services.AddScoped<IAbout, EFAboutDal>();
+builder.Services.AddScoped<IAboutService, AboutManager>();
+
+builder.Services.AddScoped<IBooking, EFBookingDal>();
+builder.Services.AddScoped<IBookingService, BookingManager>();
+
+
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 builder.Services.AddCors(opt => // Consume edilecek alanlarý tutmak için

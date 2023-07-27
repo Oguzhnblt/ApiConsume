@@ -4,7 +4,7 @@ namespace HotelProject.WebUI.ViewComponents.Default
 {
     public class _FooterPartial : ViewComponent
     {
-        public IViewComponentResult Invoke ()
+        public IViewComponentResult Invoke()
         {
             return View();
         }
