@@ -30,12 +30,12 @@ namespace HotelProject.BusinessLayer.Concrete
 
         public void TInsert(Service entity)
         {
-            throw new NotImplementedException();
+            _service.Insert(entity);
         }
 
         public void TUpdate(Service entity)
         {
-            throw new NotImplementedException();
+            _service.Update(entity);
         }
     }
 }

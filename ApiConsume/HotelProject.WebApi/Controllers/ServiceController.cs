@@ -28,7 +28,7 @@ namespace HotelProject.WebApi.Controllers
             _service.TInsert(service);
             return Ok();
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteService(int id) // Oda silme
         {
             var values = _service.TGetByID(id);

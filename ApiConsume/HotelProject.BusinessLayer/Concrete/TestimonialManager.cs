@@ -30,12 +30,12 @@ namespace HotelProject.BusinessLayer.Concrete
 
         public void TInsert(Testimonial entity)
         {
-            _testimonial.Insert(entity);    
+            _testimonial.Insert(entity);
         }
 
         public void TUpdate(Testimonial entity)
         {
-           _testimonial.Update(entity);
+            _testimonial.Update(entity);
         }
     }
 }
