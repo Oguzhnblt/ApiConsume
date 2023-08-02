@@ -18,15 +18,24 @@ namespace HotelProject.WebUI.Controllers
         public async Task<IActionResult> Inbox()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:5079/api/Contact");
-            if (responseMessage.IsSuccessStatusCode)
+
+            var contactResponse = await client.GetAsync("http://localhost:5079/api/Contact");
+            var contactCountResponse = await client.GetAsync("http://localhost:5079/api/GetContactCount");
+            var sendMessageCountResponse = await client.GetAsync("http://localhost:5079/api/GetSendMessageCount");
+
+            if (contactResponse.IsSuccessStatusCode)
             {
-                var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultContactDTO>>(jsonData);
-                return View(values);
+                var contactJsonData = await contactResponse.Content.ReadAsStringAsync();
+                var contactValues = JsonConvert.DeserializeObject<List<ResultContactDTO>>(contactJsonData);
+                ViewBag.contactCount = await contactCountResponse.Content.ReadAsStringAsync();
+                ViewBag.sendMessageCount = await sendMessageCountResponse.Content.ReadAsStringAsync();
+
+                return View(contactValues);
             }
+
             return View();
         }
+
 
         public async Task<IActionResult> SendBox()
         {
