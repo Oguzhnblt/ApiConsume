@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HotelProject.EntityLayer.Concrete;
 using HotelProject.WebUI.DTOs.AboutDTO;
+using HotelProject.WebUI.DTOs.AppUserDTO;
 using HotelProject.WebUI.DTOs.BookingDTO;
 using HotelProject.WebUI.DTOs.ContactDTO;
 using HotelProject.WebUI.DTOs.GuestDTO;
@@ -55,6 +56,10 @@ namespace HotelProject.WebUI.Mapping
             CreateMap<CreateSendMessage, SendMessage>().ReverseMap();
             CreateMap<ResultSendBoxDTO, SendMessage>().ReverseMap();
             CreateMap<GetMessageByIdDTO, SendMessage>().ReverseMap();
+
+            CreateMap<ResultAppUserDTO, AppUser>().ReverseMap();
+            CreateMap<ResultAppUserListDTO, AppUser>().ReverseMap();
+
 
 
 

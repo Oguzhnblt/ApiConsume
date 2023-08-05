@@ -35,7 +35,7 @@ namespace HotelProject.WebUI.Controllers
 
             ViewBag.v = values2;
 
-            return View(values);
+            return View();
         }
 
         [HttpGet]
