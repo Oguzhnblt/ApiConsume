@@ -1,6 +1,4 @@
-﻿using HotelProject.EntityLayer.Concrete;
-
-namespace HotelProject.WebUI.DTOs.ContactDTO
+﻿namespace HotelProject.WebUI.DTOs.ContactDTO
 {
     public class CreateContactDTO
     {

@@ -3,11 +3,6 @@ using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.DataAccessLayer.Repositories;
 using HotelProject.EntityLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelProject.DataAccessLayer.EntityFramework
 {
@@ -15,6 +10,13 @@ namespace HotelProject.DataAccessLayer.EntityFramework
     {
         public EFAppUserDal(Context context) : base(context)
         {
+        }
+
+        public int AppUserCount()
+        {
+           var context = new Context();
+            var value = context.Users.Count();
+            return value;
         }
 
         public List<AppUser> UserListWithWorkLocation()

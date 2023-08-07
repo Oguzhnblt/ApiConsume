@@ -32,7 +32,7 @@ namespace HotelProject.BusinessLayer.Concrete
 
         public int TGetSendMessageCount()
         {
-           return _sendMessage.GetSendMessageCount();
+            return _sendMessage.GetSendMessageCount();
         }
 
         public void TInsert(SendMessage entity)

@@ -4,5 +4,6 @@ namespace HotelProject.DataAccessLayer.Abstract
 {
     public interface IRoom : IGeneric<Room>
     {
+        int RoomCount();
     }
 }

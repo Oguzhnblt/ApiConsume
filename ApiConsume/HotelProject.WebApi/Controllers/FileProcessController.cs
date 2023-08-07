@@ -57,7 +57,7 @@ namespace HotelProject.WebApi.Controllers
         {
             // Desteklenen metin dosya uzantılarını burada tanımlayabilirsiniz.
             // Bu örnekte sadece .txt uzantısını kontrol ediyoruz.
-            string[] supportedExtensions = { ".txt",".pdf" };
+            string[] supportedExtensions = { ".txt", ".pdf" };
             string fileExtension = Path.GetExtension(file.FileName).ToLowerInvariant();
             return Array.Exists(supportedExtensions, ext => ext == fileExtension);
         }

@@ -28,7 +28,7 @@ namespace HotelProject.WebUI.Controllers
             var httpClient = new HttpClient();
             var responseMessage = await httpClient.PostAsync("http://localhost:5079/api/FileImage", multipartFormDataContent);
 
-            if(responseMessage.IsSuccessStatusCode)
+            if (responseMessage.IsSuccessStatusCode)
             {
                 return View();
             }
